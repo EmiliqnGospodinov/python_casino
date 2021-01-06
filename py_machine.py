@@ -10,16 +10,17 @@
 import random
 from wallet_functions import show_wallet_balance as show_balance, withdraw_wallet as withdraw, deposit_wallet as deposit, credits_balance as credits
 import blackjack as bjack
-
+from datetime import datetime
 
 #variables
 shuffable_deck = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'J','Q','K','A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J','Q','K','A'] #ints and strings
 full_deck = {2, 3, 4, 5, 6, 7, 8, 9, 10, 'J','Q','K','A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J','Q','K','A'} # Set - no dublicates
 full_deck2 = (2, 3, 4, 5, 6, 7, 8, 9, 10, 'J','Q','K','A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J','Q','K','A') # Tuple - not edittable
+time_now = datetime.now().strftime("%H:%M:%S") # Current time in HH:MM:SS format
 
 def logged_mssg(username):
     """Display welcome message"""
-    return f'Hello, {username}! You have {credits} credits.'
+    return f'Hello, {username}! The time is {time_now}. You have {credits} credits.'
 
 
 def draw_hand(i):
